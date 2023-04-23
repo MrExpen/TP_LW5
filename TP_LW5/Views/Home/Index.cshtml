@@ -1,0 +1,42 @@
+﻿@model List<User>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div>
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>LastName</th>
+            <th>FirstName</th>
+            <th>Patronymic</th>
+            <th>Birthday</th>
+            <th>Email</th>
+            <th>PhoneNumber</th>
+            <th>DepositAmount</th>
+            <th>BankName</th>
+            <th>Actions</th>
+        </tr>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <th>@user.Id</th>
+                <th>@user.LastName</th>
+                <th>@user.FirstName</th>
+                <th>@user.Patronymic</th>
+                <th>@user.Birthday</th>
+                <th>@user.Email</th>
+                <th>@user.PhoneNumber</th>
+                <th>@user.DepositAmount</th>
+                <th>@user.BankName</th>
+                <th>
+                    <a href="@Url.Action("Update", new { id = user.Id })" class="btn btn-primary">Edit</a>
+                    <a href="@Url.Action("Get", new { id = user.Id })" class="btn btn-primary">View</a>
+                    <a href="@Url.Action("Delete", new { id = user.Id })" class="btn btn-danger">Delete</a>
+                </th>
+            </tr>
+        }
+    </table>
+    <a class="btn btn-primary" asp-action="Add">Add</a>
+</div>

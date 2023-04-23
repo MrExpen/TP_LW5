@@ -1,0 +1,40 @@
+﻿@model User
+
+<div>
+    <form method="post">
+        <input type="hidden" name="id" value="@Model.Id"/>
+        <div>
+            @Html.LabelFor(u => u.LastName)
+            @Html.EditorFor(u => u.LastName)
+        </div>
+        <div>
+            @Html.LabelFor(u => u.FirstName)
+            @Html.EditorFor(u => u.FirstName)
+        </div>
+        <div>
+            @Html.LabelFor(u => u.Patronymic)
+            @Html.EditorFor(u => u.Patronymic)
+        </div>
+        <div>
+            @Html.LabelFor(u => u.Birthday)
+            @Html.EditorFor(u => u.Birthday)
+        </div>
+        <div>
+            @Html.LabelFor(u => u.Email)
+            @Html.EditorFor(u => u.Email)
+        </div>
+        <div>
+            @Html.LabelFor(u => u.PhoneNumber)
+            @Html.EditorFor(u => u.PhoneNumber)
+        </div>
+        <div>
+            @Html.LabelFor(u => u.DepositAmount)
+            @Html.EditorFor(u => u.DepositAmount)
+        </div>
+        <div>
+            @Html.LabelFor(u => u.BankName)
+            @Html.EditorFor(u => u.BankName)
+        </div>
+        <input type="submit"/>
+    </form>
+</div>
